@@ -51,6 +51,16 @@ git apply D:/_code/php5-patched-builds/patches/php-5.6-minimal.patch
 
 The runtime version may remain `5.6.40`; use the ZIP name and available build metadata to identify the flavor. Eight ZIPs contain build records under `build-info/`; the earlier enhanced-universal PHP 5.6 ZIP does not.
 
+## Collect information for a Linux build
+
+Copy [collect-php-build-info.sh](collect-php-build-info.sh) to the remote Linux server and run it from a private directory outside the website root:
+
+```bash
+bash collect-php-build-info.sh > php-build-info.txt
+```
+
+The script prints the Linux version, CPU architecture, system C library, PHP version, extensions and Apache/Nginx version. It also checks Apache's PHP/FastCGI modules, running PHP-FPM process names and configuration filenames containing PHP handlers. It does not change the server or dump configuration contents. Send the resulting `php-build-info.txt` file. Both handlers can coexist for different sites; website PHP may differ from command-line PHP.
+
 ## Validation
 
 All nine collected patches passed clean-source application checks, and their resulting runtime sources matched the saved build workspaces. Compiled packages underwent the targeted checks recorded during their builds; coverage differed between packages. These checks do not establish full PHP test-suite coverage, a complete security audit, or live application compatibility under Apache.
