@@ -2,7 +2,7 @@
 
 This folder contains nine separate Windows runtime ZIPs and their matching source patches in [patches/](patches/). Each build uses one patch flavor on its matching source. The current XAMPP installation is unchanged.
 
-Patch source: [Anton-Barinov/php2shell-patches](https://github.com/Anton-Barinov/php2shell-patches), revision `44d89a8ef15ecaded6ef441b4afea5653eb1f8c9`. These are unofficial community backports for unsupported PHP versions.
+Patch source: [Anton-Barinov/php2shell-patches](https://github.com/Anton-Barinov/php2shell-patches). These are unofficial community backports for unsupported PHP versions.
 
 ## Packages and matching patches
 
@@ -35,12 +35,12 @@ All flavors change affected memory-allocation failure paths to terminate the pro
 
 The patches apply to source code and require compilation. They cannot be applied to `php.exe`. Use one chosen patch on a clean matching source tree; do not stack flavors or apply a patch twice.
 
-| Source | Repository and tag/branch | Recorded commit |
-|---|---|---|
-| PHP 5.4.45 | [php/php-src](https://github.com/php/php-src), tag `php-5.4.45` | `24324791c23de1d66d1ff7787b472db30d1af228` |
-| PHP 5.5.38 | Same repository, tag `php-5.5.38` | `bcd100d812b525c982cf75d6c6dabe839f61634a` |
-| Original PHP 5.6.40 | Same repository, tag `php-5.6.40` | `4b8f72da5dfb201af4e82dee960261d8657e414f` |
-| Remi PHP 5.6 | [remicollet/php-src-security](https://github.com/remicollet/php-src-security), branch `PHP-5.6-security-backports` | `7df1c2b14e40d1c9f84b2903e925ef4c9f6d2373` |
+| Source | Repository and tag/branch |
+|---|---|
+| PHP 5.4.45 | [php/php-src](https://github.com/php/php-src), tag `php-5.4.45` |
+| PHP 5.5.38 | Same repository, tag `php-5.5.38` |
+| Original PHP 5.6.40 | Same repository, tag `php-5.6.40` |
+| Remi PHP 5.6 | [remicollet/php-src-security](https://github.com/remicollet/php-src-security), branch `PHP-5.6-security-backports` |
 
 For example, run these commands from the root of clean original PHP 5.6.40 source, running the second command only if the check succeeds:
 
